@@ -21,7 +21,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -45,6 +45,10 @@ ax2 = ax1.twinx()
 ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
+
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")    
 
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
@@ -82,7 +86,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -107,6 +111,9 @@ ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
 
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")   
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
 # -------------------------------------------------------
@@ -143,7 +150,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -167,6 +174,10 @@ ax2 = ax1.twinx()
 ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
+
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")   
 
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
@@ -205,7 +216,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -230,6 +241,9 @@ ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
 
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")   
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
 # -------------------------------------------------------
@@ -266,7 +280,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -290,6 +304,10 @@ ax2 = ax1.twinx()
 ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
+
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")   
 
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
@@ -327,7 +345,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -351,6 +369,10 @@ ax2 = ax1.twinx()
 ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
+
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")   
 
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
@@ -388,7 +410,7 @@ df_year = df[df["Datum"].dt.year == year].copy()
 # 4. Trendlinie (30-Tage Rolling Mean)
 # -------------------------------------------------------
 df_year["Umsatz_trend"] = df_year["Umsatz"].rolling(window=30, center=True, min_periods=1).mean()
-
+df_year["temperatur_trend"] = df_year["Temperatur"].rolling(window=30, center=True, min_periods=1).mean()
 # -------------------------------------------------------
 # 5. Plot mit zwei Y-Achsen
 # -------------------------------------------------------
@@ -413,6 +435,9 @@ ax2.set_ylabel("Temperatur (°C)", color="tab:red")
 ax2.plot(df_year["Datum"], df_year["Temperatur"], color="tab:red", label="Temperatur")
 ax2.tick_params(axis="y", labelcolor="tab:red")
 
+#trendlinie temperatur
+ax2.plot(df_year["Datum"], df_year["temperatur_trend"], 
+         color="tab:green", linewidth=2.5, label="Temperatur-Trend (30T-Glättung)")   
 # -------------------------------------------------------
 # Legende beider Achsen zusammenführen
 # -------------------------------------------------------
@@ -426,35 +451,7 @@ plt.tight_layout()
 plt.savefig(r"C:\Users\user\Documents\Data science\bakery_prediction\1_DatasetCharacteristics\sales_temperature_2018.png")
 plt.show()
 
-from PIL import Image
 
-# Liste der Bilddateien mit vollständigem Pfad
-images = [Image.open(r"C:\Users\user\Documents\Data science\bakery_prediction\Plots\sales_temperature_2013.png"),
-          Image.open(r"C:\Users\user\Documents\Data science\bakery_prediction\Plots\sales_temperature_2014.png"),
-          Image.open(r"C:\Users\user\Documents\Data science\bakery_prediction\Plots\sales_temperature_2015.png"),
-          Image.open(r"C:\Users\user\Documents\Data science\bakery_prediction\Plots\sales_temperature_2016.png"),
-          Image.open(r"C:\Users\user\Documents\Data science\bakery_prediction\Plots\sales_temperature_2017.png"),
-          Image.open(r"C:\Users\user\Documents\Data science\bakery_prediction\Plots\sales_temperature_2018.png")]
-# Bestimme Größe eines Bildes
-width, height = images[0].size
-
-# Collage-Größe: 2 Reihen x 3 Spalten
-collage = Image.new('RGB', (3*width, 2*height))
-
-# Bilder einfügen
-collage.paste(images[0], (0,0))
-collage.paste(images[1], (width,0))
-collage.paste(images[2], (2*width,0))
-collage.paste(images[3], (0,height))
-collage.paste(images[4], (width,height))
-collage.paste(images[5], (2*width,height))
-
-# Speichern
-collage.save("collage_final.png")
-
-
-# over the years averages
-# total monthly averages
 import pandas as pd
 import matplotlib.pyplot as plt
 
