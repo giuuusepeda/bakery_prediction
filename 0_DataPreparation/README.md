@@ -1,4 +1,9 @@
 # Data Preparation
+
+ToDO
+
+Add the steps 
+
 Notebook 01:
 1. pre-processing unsatz adding test dates and dates that where missing (considered null faturing-Umsatz)
 Notbook 02:
