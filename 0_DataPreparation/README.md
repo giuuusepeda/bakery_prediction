@@ -1,25 +1,53 @@
 # Data Preparation
 
-ToDO
+Here we have imported the provided dataset and performed various transformation on it.
 
-Add the steps 
-- [Data Preparation](#data-preparation)
+## The Data Source
 
-Notebook 01:
-1. pre-processing unsatz adding test dates and dates that where missing (considered null faturing-Umsatz)
-Notbook 02:
-2. Merged 3 dataset - left(left(New_Umsatz, Kiwo), Wetter)
-3. inputation 
-    a. Kiwo - 0 for days with not kiwo(1)
-    b. weather - for missing  variables "Bewoelkung", "Temperatur" and/or "Windgeschwindigkeit" Inputated with mean of day after and before
+The datasets was provided by **Open Campus**. Initially we were given three csv files -
 
-All missing values were between 2016-12-11 and 2017-11-08
-Means for that period Before and After Inputation
-Mean Bewoelkung before imputation: 4.945510835913312
-Mean Bewoelkung after imputation: 4.887049083382614
-Mean Temperatur before imputation: 12.10357675761194
-Mean Temperatur after imputation: 11.987884596514277
-Mean Windgeschwindigkeit before imputation: 11.042603863455941
-Mean Windgeschwindigkeit after imputation: 11.038623226484498
+1.  The first file contains the sales data of the bakery from 01/07/2013 to 31/07/2018.
+    [*umsatzdaten_gekuerzt.csv*](https://raw.githubusercontent.com/opencampus-sh/einfuehrung-in-data-science-und-ml/main/umsatzdaten_gekuerzt.csv)
+2.  The weather file contains various weather data for the time period 01/01/2012 to 01/08/2019.
+   [*wetter.csv*](https://raw.githubusercontent.com/opencampus-sh/einfuehrung-in-data-science-und-ml/main/wetter.csv)
+3. The KiWo file contains the dates for Kieler Woche event between the years 2012 and 2019, along with a flag variable.
+   [*kiwo.csv*](https://raw.githubusercontent.com/opencampus-sh/einfuehrung-in-data-science-und-ml/main/kiwo.csv)
 
-    c. For some days, that were discrepancies for weather variables between "Warengruppe"1-5 and 6. Problem was solved replicating values for group 1 for all groups.
+The datasets are saved inside the **Raw** subfolder.
+
+## Data Wrangling
+
+- **Merging** - Imported everything in python and merged three datasets. Started with the *umsatz* table as the left table and joined the *wetter* and *kiwo* tables with it. So we ended up with a merged table that contained sales data with various weather codes and Kieler Woche dates.
+- **Handling Missing Values/ Inputation** - some rows from the *wetter* csv file had some missing values for the fields "Bewoelkung", "Temperatur" and "Windgeschwindigkeit".We have replaced them with mean of the previous and the next day.
+- **Creating row id** - every row has a unique id in the *YYMMDDWarengruppe* format.
+- **Weather code** - Almost 100 numeric weather codes were condensed into 4 broad categories : *sunny, cloudy, rainy, thunderstorm*
+
+
+### Time Intelligence
+
+As the dataset contains dates, we have extracted multiple features from it. After converting the date filed into proper datetime format, we have extracted -
+
+-  Week Number(Woche)
+-  Month Number(Monat)
+-  Weekday Number(Wochentag) -*Monday : 1...Sunday : 7*
+-  Season Code(Jahreszeit) -*Winter : 1, Spring : 2, Summer : 3, Autumn : 4*
+-  Flags for Hoilidays(Feiertag), School Holidays(Ferien) and Kieler Woche Days - 0/1 flags were added.
+
+ **One-hot-encoding** - for easier anlysis by the ML algorithms,the relevant categorical variables weekday,month, season, warrengruppe.
+- 
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+<r>TODO:</r>
+
+<o> 
+Will be updated after further modifications
+
+- Temperatur regarding seasons ?
+- Rolling averages ?
+
+
+</o>
