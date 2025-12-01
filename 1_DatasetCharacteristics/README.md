@@ -10,6 +10,10 @@ These are some of the exploratory data analysis performed on the merged dataset
 - Avg sales by weekdays
 - Top 3 performing products on week days
 - Saisonbrot sales on weekdays
-- 
+
+
+<div style="color: blue;">
+ToDo - ongoing work ...
+</div>
 
 
