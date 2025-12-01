@@ -34,21 +34,15 @@ As the dataset contains dates, we have extracted multiple features from it. Afte
 -  Flags for Hoilidays(Feiertag), School Holidays(Ferien) and Kieler Woche Days - 0/1 flags were added.
 
  **One-hot-encoding** - for easier anlysis by the ML algorithms,the relevant categorical variables weekday,month, season, warrengruppe.
-- 
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
 
-<r>TODO:</r>
 
-<o> 
+<div style="color: blue;">
+ToDO
+
 Will be updated after further modifications
 
 - Temperatur regarding seasons ?
 - Rolling averages ?
 - further
 - misc
-
-</o>
+</div>
