@@ -12,8 +12,8 @@ These are some of the exploratory data analysis performed on the merged dataset
 - Saisonbrot sales on weekdays
 
 
-<div style="color: blue;">
-ToDo - ongoing work ...
-</div>
+
+**ToDo - ongoing work ...**
+
 
 
