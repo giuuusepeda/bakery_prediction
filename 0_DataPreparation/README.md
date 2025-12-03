@@ -31,6 +31,7 @@ As the dataset contains dates, we have extracted multiple features from it. Afte
 -  Month Number(Monat)
 -  Weekday Number(Wochentag) -*Monday : 1...Sunday : 7*
 -  Season Code(Jahreszeit) -*Winter : 1, Spring : 2, Summer : 3, Autumn : 4*
+-  rolling averages in a 30 day window of Wind, Temperatur      and Umsatz
 -  Flags for Hoilidays(Feiertag), School Holidays(Ferien) and Kieler Woche Days - 0/1 flags were added.
 
  **One-hot-encoding** - for easier anlysis by the ML algorithms,the relevant categorical variables weekday,month, season, warrengruppe.
