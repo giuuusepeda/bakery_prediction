@@ -15,7 +15,7 @@ We have made 2 baseline models. The first one is a modified regression and the s
 - Warengruppe: 5, MAPE: 19.9829%
 - Warengruppe: 6, MAPE: 65.3472%
 
-## 2. Randon Forest
+## 2. Random Forest
 
 **Performace on Kaggle public leaderboard (21% of test data) : 0.18380**
 
@@ -30,9 +30,10 @@ Best params: {
 'max_depth': 20, 
 'bootstrap': True}
 ```
-> Features: 
+
+> **Features:** 
 Warengruppe (not encodded - worked better then encodded)-
-Umsatz - KielerWoche-	Bewoelkung-	Temperatur-	Windgeschwindigkeit- Woche-	Monat-
+Umsatz - KielerWoche- Bewoelkung-	Temperatur-	Windgeschwindigkeit- Woche-	Monat-
 Ferien-	sunny-	cloudy-	rainy-	thunderstorm-	is_weekend-	sin_Monat-	cos_Monat-	
 sin_Wochentag-	cos_Wochentag- 
 (doubbled features encoded and not)
