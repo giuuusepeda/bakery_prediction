@@ -10,6 +10,7 @@ As our Baseline Model we have choosen *Multiple Linear Regression* with interact
 
 **Fourier Terms** We also captured the global seasonality with - 
 
+<<<<<<< HEAD
 > sin_Monat, cos_Monat, sin_Wochentag, cos_Wochentag
 
 ## Model Evaluation
@@ -47,3 +48,5 @@ Public score (21% of test data) :     **0.21517**
 
 
 
+=======
+>>>>>>> e3a0a6f2bb0b70c1c66216b3a93252b67baa657c
