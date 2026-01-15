@@ -1,17 +1,49 @@
-# Baseline Model
----
+# Baseline Model - Multiple Linear Regression
 
-We have made 2 baseline models. The first one is a modified regression and the second one utilizes the random forest algorithm.
+As our Baseline Model we have choosen *Multiple Linear Regression* with interaction among variables and harmonic features (Fourier Terms to capture the cyclic pattern of Weekdays and Months).
 
-## 1. Linear regression with the cylindrical functions for temporal features
+## Feature Selection
+ 
+**Interaction Variables** : Warengruppe (Categorical Variable) has 6 unique categories. Each category interacted with -
 
-**Performace on Kaggle public leaderboard (21% of test data) : 0.21517**
+> KielerWoche,  is_weekend,  Temperatur,  Ferien,  Feiertag
 
-*Mean Absolute Percentage Error (On entire dataset): 23.6629%*
-- Warengruppe: 1, MAPE: 23.9122%
-- Warengruppe: 2, MAPE: 18.5609%
-- Warengruppe: 3, MAPE: 23.3061%
-- Warengruppe: 4, MAPE: 26.0139%
-- Warengruppe: 5, MAPE: 19.9829%
-- Warengruppe: 6, MAPE: 65.3472%
+**Fourier Terms** We also captured the global seasonality with - 
+
+> sin_Monat, cos_Monat, sin_Wochentag, cos_Wochentag
+
+## Model Evaluation
+
+The performance comparison on training set and validation set is shown below.
+
+| Metric | Training Set Performance | Validation Set Performance |
+| :--- | :--- | :--- |
+| **R² Score** | 0.8142 | 0.8071 |
+| **MAE** | 38.3755 | 38.3217 |
+| **MSE** | 4055.4493 | 3263.3488 |
+| **RMSE** | 63.6824 | 57.1257 |
+| **MAPE (Overall)** | 22.7875% | 23.6629% |
+
+The MAPEs across the Product Groups (Warengruppe) were as follows - 
+
+| Warengruppe | Training Set MAPE | Validation Set MAPE |
+| ----------- | ----------- | ----------- |
+| **1** | 26.1456% | 23.9122% |
+| **2** | **15.0560%** | **18.5609%** |
+| **3** | 22.7948% | 23.3061% |
+| **4** | 29.3436% | 26.0139% |
+| **5** | 15.9847% | 19.9829% |
+| **6** | **52.8359%** | **65.3472%** |
+
+So the model performed best on Warengruppe 2 and worst on Warengruppe 6.
+
+## Performance on Kaggle
+
+After Kaggle submission, we got the following result -
+
+Private score (79% of test data) :    **0.21096**
+
+Public score (21% of test data) :     **0.21517**
+
+
 
