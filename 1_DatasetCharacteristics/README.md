@@ -79,7 +79,13 @@ Files include:
 - Overlaying **temperature** and **sales** helps visually assess co-movement (e.g., higher sales during warmer periods depending on product mix).
 - Group-based notebooks help identify which `Warengruppe` contributes most to overall seasonality and weekday effects.
 
----
+# Additional Visualizations
+
+- `distributions.png`  
+  Histograms of all main features (sales, weather, calendar, and categorical encodings) to assess distributions, skewness, class imbalance, and potential preprocessing needs.
+
+- `corr_heatmap.png`  
+  Pearson correlation heatmap of numerical features highlighting relationships between sales, weather variables, and calendar features, as well as strong multicollinearity among time-based variables.
 
 
 
