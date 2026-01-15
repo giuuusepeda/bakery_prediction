@@ -20,24 +20,24 @@ The datasets are saved inside the **Raw** subfolder.
 - **Merging** - Imported everything in python and merged three datasets. Started with the *umsatz* table as the left table and joined the *wetter* and *kiwo* tables with it. So we ended up with a merged table that contained sales data with various weather codes and Kieler Woche dates.
 - **Handling Missing Values/ Imputation** - some rows from the *wetter* csv file had some missing values for the fields "Bewoelkung", "Temperatur" and "Windgeschwindigkeit".We have replaced them with mean of the previous and the next day. Kieler Woche NaNs were set to 0.
 - **Creating row id** - every row has a unique id in the *YYMMDDWarengruppe* format.
-- **Weather code** - Almost 100 numeric weather codes were condensed into 4 broad categories : *sunny, cloudy, rainy, thunderstorm*. Missing values in weather code were imputated with mode (dominant weather code of the week).
 - **split dataset** into a training dataset (from 01.07.2013 to 31.07.2017), a validation dataset f(rom 01.08.2017 to 31.07.2018) and a test dataset (from 01.08.2018 to 31.07.2019)
-
 
 ### Time Intelligence
 
-As the dataset contains dates, we have extracted multiple features from it. After converting the date filed into proper datetime format, we have extracted -
+As the dataset contains dates, we have extracted multiple features from it. After converting the date filed into proper datetime format, we have extracted some new variables.
 
--  Week Number(Woche)
--  Month Number(Monat)
--  Weekday Number(Wochentag) -*Monday : 1...Sunday : 7*
--  Weekend (yes or no)
--  Season Code(Jahreszeit) -*Winter : 1, Spring : 2, Summer : 3, Autumn : 4*
--  seasonal temperature
--  Wettercode classified in 4 categories (sunny, cloudy, rainy, thunderstorm)
--  rolling averages in a 30 day window of Wind, Temperatur and Umsatz
--  sine and cosine of month and weekday
--  Flags for Hoylidays(Feiertag), School Holidays(Ferien) and Kieler Woche Days - 0/1 flags were added.
+### Data exploration and creation of new variables
+- **Weather code** - Almost 100 numeric weather codes were condensed into 4 broad categories : *sunny, cloudy, rainy, thunderstorm*. Missing values in weather code were imputated with mode (dominant weather code of the week).
+-  **Week Number(Woche)**
+-  **Month Number(Monat)**
+-  **Weekday Number(Wochentag)** -*Monday : 1...Sunday : 7*
+-  **Weekend** (yes or no)
+-  **Season Code(Jahreszeit)** -*Winter : 1, Spring : 2, Summer : 3, Autumn : 4*
+-  **seasonal temperature**
+-  **Wettercode classified in 4 categories** (sunny, cloudy, rainy, thunderstorm)
+-  **rolling averages** in a 30 day window of Wind, Temperatur and Umsatz
+-  **sine and cosine** of month and weekday
+-  **Flags for Hoylidays(Feiertag), School Holidays(Ferien) and Kieler Woche Days** - 0/1 flags were added.
 
  **One-hot-encoding** - for easier anlysis by the ML algorithms,the relevant categorical variables weekday,month, season, warrengruppe.
 
