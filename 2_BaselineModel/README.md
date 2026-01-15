@@ -8,7 +8,7 @@ For building a baseline model we wanted to begin with simpler assumptions and co
 
 > KielerWoche,  is_weekend,  Temperatur,  Ferien,  Feiertag
 
-**Fourier Terms** We also captured the global seasonality with - 
+**Fourier Terms** : We also captured the global seasonality with - 
 
 > sin_Monat, cos_Monat, sin_Wochentag, cos_Wochentag
 
