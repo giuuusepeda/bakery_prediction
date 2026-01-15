@@ -1,48 +1,49 @@
-# Baseline Model
----
+# Baseline Model - Multiple Linear Regression
 
-We have made 2 baseline models. The first one is a modified regression and the second one utilizes the random forest algorithm.
+As our Baseline Model we have choosen *Multiple Linear Regression* with interaction among variables and harmonic features (Fourier Terms to capture the cyclic pattern of Weekdays and Months).
 
-## 1. Linear regression with the cylindrical functions for temporal features
+## Feature Selection
+ 
+**Interaction Variables** : Warengruppe (Categorical Variable) has 6 unique categories. Each category interacted with -
 
-**Performace on Kaggle public leaderboard (21% of test data) : 0.21517**
+> KielerWoche,  is_weekend,  Temperatur,  Ferien,  Feiertag
 
-*Mean Absolute Percentage Error (On entire dataset): 23.6629%*
-- Warengruppe: 1, MAPE: 23.9122%
-- Warengruppe: 2, MAPE: 18.5609%
-- Warengruppe: 3, MAPE: 23.3061%
-- Warengruppe: 4, MAPE: 26.0139%
-- Warengruppe: 5, MAPE: 19.9829%
-- Warengruppe: 6, MAPE: 65.3472%
+**Fourier Terms** We also captured the global seasonality with - 
 
-## 2. Random Forest
+> sin_Monat, cos_Monat, sin_Wochentag, cos_Wochentag
 
-**Performace on Kaggle public leaderboard (21% of test data) : 0.18380**
+## Model Evaluation
 
-Best VAL MAPE: 20.232120765597696
+The performance comparison on training set and validation set is shown below.
 
-```
-Best params: {
-'n_estimators': 600, 
-'min_samples_split': 20, 
-'min_samples_leaf': 2, 
-'max_features': 1.0, 
-'max_depth': 20, 
-'bootstrap': True}
-```
+| Metric | Training Set Performance | Validation Set Performance |
+| :--- | :--- | :--- |
+| **R² Score** | 0.8142 | 0.8071 |
+| **MAE** | 38.3755 | 38.3217 |
+| **MSE** | 4055.4493 | 3263.3488 |
+| **RMSE** | 63.6824 | 57.1257 |
+| **MAPE (Overall)** | 22.7875% | 23.6629% |
 
-> **Features:** 
-Warengruppe (not encodded - worked better then encodded)-
-Umsatz - KielerWoche- Bewoelkung-	Temperatur-	Windgeschwindigkeit- Woche-	Monat-
-Ferien-	sunny-	cloudy-	rainy-	thunderstorm-	is_weekend-	sin_Monat-	cos_Monat-	
-sin_Wochentag-	cos_Wochentag- 
-(doubbled features encoded and not)
+The MAPEs across the Product Groups (Warengruppe) were as follows - 
 
-*Mean Absolute Percentage Error: 23.6629%*
+| Warengruppe | Training Set MAPE | Validation Set MAPE |
+| ----------- | ----------- | ----------- |
+| **1** | 26.1456% | 23.9122% |
+| **2** | **15.0560%** | **18.5609%** |
+| **3** | 22.7948% | 23.3061% |
+| **4** | 29.3436% | 26.0139% |
+| **5** | 15.9847% | 19.9829% |
+| **6** | **52.8359%** | **65.3472%** |
 
-- Warengruppe: 1, MAPE: 19.907234%
-- Warengruppe: 2, MAPE: 16.2921759%
-- Warengruppe: 3, MAPE: 19.681718%
-- Warengruppe: 4, MAPE: 24.553163%
-- Warengruppe: 5, MAPE: 17.916015%
-- Warengruppe: 6, MAPE: 38.147771%
+So the model performed best on Warengruppe 2 and worst on Warengruppe 6.
+
+## Performance on Kaggle
+
+After Kaggle submission, we got the following result -
+
+Private score (79% of test data) :    **0.21096**
+
+Public score (21% of test data) :     **0.21517**
+
+
+
