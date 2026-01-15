@@ -1,6 +1,6 @@
 # Baseline Model - Multiple Linear Regression
 
-As our Baseline Model we have choosen *Multiple Linear Regression* with interaction among variables and harmonic features (Fourier Terms to capture the cyclic pattern of Weekdays and Months).
+For building a baseline model we wanted to begin with simpler assumptions and come up with a model that is low on computational cost. After multiple trial and error we have choosen *Multiple Linear Regression* with interaction among variables and harmonic features (Fourier Terms to capture the cyclic pattern of Weekdays and Months).
 
 ## Feature Selection
  
@@ -11,6 +11,8 @@ As our Baseline Model we have choosen *Multiple Linear Regression* with interact
 **Fourier Terms** We also captured the global seasonality with - 
 
 > sin_Monat, cos_Monat, sin_Wochentag, cos_Wochentag
+
+The implementation of this model is discussed in detail inside the **04_sm_lin_reg_extended.ipynb** notebook.
 
 ## Model Evaluation
 
