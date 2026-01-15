@@ -1,3 +1,4 @@
 # Presentation
+link to presentation:
 
-**[Slides](name_of_your_file_including_the_presentation_slides)**
+**[Slides](https://github.com/giuuusepeda/bakery_prediction/blob/50f6a320e13823cd78178248886c9270ffde01a2/4_Presentation/Group14_Presentation.pdf)**
