@@ -21,7 +21,7 @@ The datasets are saved inside the **Raw** subfolder.
 - **Handling Missing Values/ Imputation** - some rows from the *wetter* csv file had some missing values for the fields "Bewoelkung", "Temperatur" and "Windgeschwindigkeit".We have replaced them with mean of the previous and the next day. Kieler Woche NaNs were set to 0.
 - **Creating row id** - every row has a unique id in the *YYMMDDWarengruppe* format.
 - **Weather code** - Almost 100 numeric weather codes were condensed into 4 broad categories : *sunny, cloudy, rainy, thunderstorm*. Missing values in weather code were imputated with mode (dominant weather code of the week).
-- split dataset into training, validation and testing data
+- **split dataset** into training, validation and testing data
 
 
 ### Time Intelligence
